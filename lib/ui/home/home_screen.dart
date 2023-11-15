@@ -1,12 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
-//import 'package:news/api_manager.dart';
-//import 'package:news/source_respons/SourseRespons.dart';
+import 'package:news/ui/home/News/search_deails.dart';
 import 'package:news/ui/home/cataegory_details/category_details.dart';
 import 'package:news/ui/home/categories/categoris_frag.dart';
 import 'package:news/ui/home/categories/category.dart';
-import 'package:news/ui/home/categories/category_widget.dart';
 import 'package:news/ui/home/home_drawer.dart';
 import 'package:news/ui/home/settings/settings_frag.dart';
 
@@ -32,9 +28,17 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         drawer: HomeDrawer(onMenueItemClick),
         appBar: AppBar(
+          actions: [
+            IconButton(onPressed: ()=>showSearch(context: context,
+                delegate: NewsSearchDelegate()),
+              icon: Icon(Icons.search,
+                size: 30,color: Colors.white,),)
+          ],
           title: Text(
             'News App',
-            style: Theme.of(context).textTheme.titleLarge,
+            style: TextStyle(color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,),
           ),
         ),
         /*body: FutureBuilder<SourseRespons>(

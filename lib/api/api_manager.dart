@@ -23,11 +23,11 @@ class ApiManager {
     //response.body;
   }
 
-  static Future<NewsResponse> getNews(String? sourcesId)async {
+  static Future<NewsResponse> searchNews(String? query)async {
     var url = Uri.https(baseUrl, "v2/everything",
         {
           "apiKey": apiKey,
-          "sources": sourcesId,
+          "q": query,
         });
     var response =await http.get(url);
     var json =jsonDecode(response.body);

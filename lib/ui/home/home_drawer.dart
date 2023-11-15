@@ -24,7 +24,7 @@ class HomeDrawer extends StatelessWidget {
               alignment: Alignment.center,
               color: Colors.green,
               child: Text(
-                'New App',
+                'News App',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,

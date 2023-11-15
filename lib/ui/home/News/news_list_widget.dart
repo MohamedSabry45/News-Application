@@ -10,7 +10,7 @@ class NewsListWidget extends StatelessWidget {
    
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(future: ApiManager.getNews(source.id),
+    return FutureBuilder(future: ApiManager.searchNews(source.id),
         builder: (context,snapshot){
       if(snapshot.connectionState ==ConnectionState.waiting){
         return Center(child: CircularProgressIndicator());
